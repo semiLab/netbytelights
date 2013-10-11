@@ -3,8 +3,8 @@
 sys     = require('util');
 express = require('express');
 
-//serialPort = require("serialport").SerialPort;
-//var serial = new serialPort("/dev/ttyUSB0" , { baudrate : 9600 });
+serialPort = require("serialport").SerialPort;
+var serial = new serialPort("/dev/ttyUSB0" , { baudrate : 9600 });
 
 //app = express.createServer();
 
@@ -39,9 +39,9 @@ io.sockets.on('connection', function(socket){
 		var r = data.red >> 5;
 		var g = data.green >> 5;
 		var b = data.blue >> 5;
-		var str = "c0"+r+g+b;
+		var str = "0"+r+g+b;
 		console.log(str);
-		//serial.write("0800");
+		serial.write(str);
 	});
 });
 
