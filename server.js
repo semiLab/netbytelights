@@ -3,8 +3,8 @@
 sys     = require('util');
 express = require('express');
 
-//serialPort = require("serialport").SerialPort;
-//var serial = new serialPort("/dev/ttyUSB0" , { baudrate : 9600 });
+serialPort = require("serialport").SerialPort;
+var serial = new serialPort("/dev/ttyUSB0" , { baudrate : 9600 });
 
 //app = express.createServer();
 
