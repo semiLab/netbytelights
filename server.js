@@ -39,9 +39,11 @@ io.sockets.on('connection', function(socket){
 		var r = data.red >> 5;
 		var g = data.green >> 5;
 		var b = data.blue >> 5;
-		var str = "0"+r+g+b;
-		console.log(str);
-		//serial.write(str);
+		for(var i=0;i<5;i++){
+		var str = ""+i+r+g+b;
+			//console.log(str);
+			serial.write(str);
+		}
 	});
 });
 
