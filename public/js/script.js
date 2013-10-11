@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost');
+var socket = io.connect();
 $("#colors").on('click', "button", function(){
 	var r = $(this).attr('data-r');
 	var g = $(this).attr('data-g');
@@ -6,7 +6,7 @@ $("#colors").on('click', "button", function(){
 	var i = $("#slider-1").val();
 	r = Math.floor(r * i / 255);
 	g = Math.floor(g * i / 255);
-	b = Math.floor(b * i / 255);
+	b = Math.floor(b * 	i / 255);
 	socket.emit('setcolor', { red: r, green:g, blue: b});
 });
 
